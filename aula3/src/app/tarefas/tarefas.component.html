@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descricão</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tarefa of tarefas"
+                    [ngStyle]="{'text-decoration': tarefa.status ? 'line-through' : 'none'}">
+                    <th scope="row">{{tarefa.id}}</th>
+                    <td>{{tarefa.nome}}</td>
+                    <td>{{tarefa.descricao}}</td>
+                    <td><input type="checkbox" [(ngModel)]="tarefa.status">
+                        <label>{{tarefa.status ? 'Concluida' : 'Não Concluida'}}</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

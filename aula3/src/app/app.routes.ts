@@ -6,6 +6,9 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
 import { TelaPaiComponent } from './tela-pai/tela-pai.component';
 import { TelaFilho1Component } from './tela-filho1/tela-filho1.component';
 import { TelaFilho2Component } from './tela-filho2/tela-filho2.component';
+import { ExemploDiretivasComponent } from './exemplo-diretivas/exemplo-diretivas.component';
+import { TarefasComponent } from './tarefas/tarefas.component';
+import { ClienteDetalheComponent } from './cliente-detalhe/cliente-detalhe.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,5 +22,8 @@ export const routes: Routes = [
             { path: 'tela-filho2', component: TelaFilho2Component }
         ]
     },
-    { path: '**', component: PaginaNaoEncontradaComponent }
+    { path: 'diretivas', component: ExemploDiretivasComponent },
+    { path: 'tarefas', component: TarefasComponent },
+    { path: 'detalhe/:id', component: ClienteDetalheComponent },
+    { path: '**', component: PaginaNaoEncontradaComponent },
 ];
