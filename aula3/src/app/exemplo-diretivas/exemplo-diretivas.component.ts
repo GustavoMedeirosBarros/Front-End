@@ -24,5 +24,6 @@ export class ExemploDiretivasComponent {
 
   exibirDetalhe(id: number) {
     this.route.navigate(['detalhe', id]);
+
   }
 }
