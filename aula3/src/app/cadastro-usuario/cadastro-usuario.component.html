@@ -1,0 +1,49 @@
+<form #form="ngForm" (ngSubmit)="salvar()" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="nome" class="form-label">Nome: </label>
+            <input type="text" name="nome" class="form-control" [(ngModel)]="usuario.nome" required placeholder="Nome">
+            <div *ngIf="form.submitted && form.controls['nome'].errors" class="invalid">
+                <div *ngIf="form.controls['nome'].errors['required']" class="invalid">Campo nome é obrigatório</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="email" class="form-label">Email: </label>
+            <input type="email" name="email" class="form-control" [(ngModel)]="usuario.email" required email>
+            <div *ngIf="form.submitted && form.controls['email'].errors" class="invalid">
+                <div *ngIf="form.controls['email'].errors['required']" class="invalid">Campo email é obrigatório</div>
+                <div *ngIf="form.controls['email'].errors['email']" class="invalid">Email inválido</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="senha" class="form-label">Senha: </label>
+            <input type="password" name="senha" class="form-control" [(ngModel)]="usuario.senha" required>
+            <div *ngIf="form.submitted && form.controls['senha'].errors" class="invalid">
+                <div *ngIf="form.controls['senha'].errors['required']" class="invalid">Campo senha é obrigatório</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <label for="ativo" class="form-label">Ativo: </label>
+            <input type="checkbox" name="ativo" class="form-check-input" [(ngModel)]="usuario.ativo" required>
+            <div *ngIf="form.submitted && form.controls['ativo'].errors" class="invalid">
+                <div *ngIf="form.controls['ativo'].errors['required']" class="invalid">Campo ativo é obrigatório</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+        </div>
+    </div>
+</form>

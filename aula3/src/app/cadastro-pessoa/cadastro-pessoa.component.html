@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="salvar()" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="nome" class="form-label">Nome: </label>
+            <input type="text" formControlName="nome" class="form-control" required placeholder="Seu Nome">
+
+            <div *ngIf="form.get('nome')?.invalid && (form.get('nome')?.dirty || form.get('nome')?.touched)">
+                <div *ngIf="form.get('nome')?.errors?.['required']" class="invalid">Nome é obrigatório</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="celular" class="form-label">Celular: </label>
+            <input type="number" formControlName="celular" class="form-control" required placeholder="(99) 99999-9999">
+            <div *ngIf="form.get('celular')?.invalid && (form.get('celular')?.dirty || form.get('celular')?.touched)">
+                <div *ngIf="form.get('celular')?.errors?.['required']" class="invalid">Celular é obrigatório</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="cidade" class="form-label">Cidade: </label>
+            <input type="text" formControlName="cidade" class="form-control" required placeholder="Nome da cidade">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Salvar</button>
+        </div>
+    </div>
+</form>
